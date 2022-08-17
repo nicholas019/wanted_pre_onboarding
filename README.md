@@ -4,10 +4,12 @@
 ## ERD
 ![원티드 프리온보딩](https://user-images.githubusercontent.com/103249222/185066359-f69dc1b5-f58a-40ed-af76-4bf9cbe745ef.png)
 
-
+## 개발기간 
+  2022년 8월 16일 ~ 8월 17일(2일)
+  
 ## 기능설명
 
-1. django를 활용하여 개발 진행
+1. Python의 Django FrameWork 를 활용하여 개발 진행
   - 4개의 APP 생성 (users, company, job, core) 및 1개 디렉토리(utils) 생성
   - users : 사용자관련 모델 정의
   - company : 회사 관련 모델 정의
@@ -44,5 +46,7 @@
   - User과 Recruitment와의 중간테이블인 UserRecruitment를 만들어 지원하는 부분을 구현 
   - 사용자는 1회만 지원이 가능함으로 login_decorator에서 받은 아이디값을 UserRecruitment 테이블에 데이터를 조회하여 존재하지 않을시 지원가능하게 구현
   - UserRecruitment 테이블에 존재할시 AlreadyExists 라는 메세지를 반환
-    
-    
+   
+## 기타사항 
+ 1. SECRET_KEY, DATABASE, ALGORITHM은 my_settings.py라는 환경변수를 만들어 별도 보관 
+    .gitinore 파일에 정의해두어 github에 안올라가게 하여 현제 repository에는 없습니다. 
