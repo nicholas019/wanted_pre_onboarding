@@ -48,7 +48,8 @@
 
 8. 과제 6. 사용자는 채용공고에 지원합니다.(사용자는 1회만 지원 가능합니다)
   - User과 Recruitment와의 중간테이블인 UserRecruitment를 만들어 지원하는 부분을 구현 
-  - 사용자는 1회만 지원이 가능함으로 login_decorator에서 받은 아이디값을 UserRecruitment 테이블에 데이터를 조회하여 존재하지 않을시 지원가능하게 구현
+  - 사용자는 1회만 지원이 가능함으로 login_decorator에서 받은 아이디값과 UserRecruitment 테이블에 데이터를 조회하여 존재하지 않을시 저장가능하게 구현
+  - 저장시 json형태로 받는 데이터에서 가져온 id 값은 recruitment의 id 이며, 저장할때 json형태로 받는 데이터의 id값과 login_decorator로 받은 id값을 저장
   - UserRecruitment 테이블에 존재할시 AlreadyExists 라는 메세지를 반환
    
 ## 기타사항 
