@@ -30,17 +30,18 @@ class RecruitmentView(View):
         return JsonResponse({"message": "SUCCESS"}, status = 201)
 
     @company_login_decorator
-    def patch(self, request):
+    def patch(self, request, recruitment_id):
         try:
+            recruitment = Recruitment.objects.get(id = recruitment_id, company_id = request.user.id)
+
             data = json.loads(request.body) 
-            recruitment = Recruitment.objects.get(company_id = request.user.id)
 
             position     = data.get("position", recruitment.position)
             compensation = data.get("compensation", recruitment.compensation)
             content      = data.get("content", recruitment.content)
             skill        = data.get("skill", recruitment.skill)
             
-            Recruitment.objects.filter(company_id = request.user.id).update(
+            Recruitment.objects.filter(id = recruitment_id, company_id = request.user.id).update(
                 position     = position,
                 compensation = compensation,
                 content      = content,
