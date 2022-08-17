@@ -7,6 +7,10 @@
 ## 개발기간 
   2022년 8월 16일 ~ 8월 17일(2일)
   
+## 필수조건 이행사항
+  1. ORM 사용 : Django FrameWork의 ORM 사용
+  2. RDBMS 사용 : MySQL 8.0.30 버전 사용
+  
 ## 기능설명
 
 1. Python의 Django FrameWork 를 활용하여 개발 진행
@@ -50,3 +54,4 @@
 ## 기타사항 
  1. SECRET_KEY, DATABASE, ALGORITHM은 my_settings.py라는 환경변수를 만들어 별도 보관 
     .gitinore 파일에 정의해두어 github에 안올라가게 하여 현제 repository에는 없습니다. 
+ 2. Unit Test는 tests.py에 별도 구현 완료
