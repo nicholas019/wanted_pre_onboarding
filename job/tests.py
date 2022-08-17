@@ -290,7 +290,9 @@ class ApplicationViewTest(TestCase):
 
         self.token = jwt.encode({'id':1}, settings.SECRET_KEY, settings.ALGORITHM)
         headers    = {"HTTP_Authorization":self.token}
-        response = client.post('/application/1', **headers, content_type='application/json')
+        data = { "id" : 1 }
+        
+        response = client.post('/application', data, **headers, content_type='application/json')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), {"message": "SUCCESS"})
 
@@ -298,8 +300,11 @@ class ApplicationViewTest(TestCase):
         client = Client()   
 
         UserRecruitment.objects.create(user_id = 1, recruitment_id = 1)
+
         self.token = jwt.encode({'id':1}, settings.SECRET_KEY, settings.ALGORITHM)
         headers    = {"HTTP_Authorization":self.token}
-        response = client.post('/application/1', **headers, content_type='application/json')
+        data = { "id" : 1 } 
+
+        response = client.post('/application', data, **headers, content_type='application/json')
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json(), {"message": "AlreadyExists"})    

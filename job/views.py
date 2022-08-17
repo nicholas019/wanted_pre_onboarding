@@ -113,12 +113,14 @@ class RecruitmentDetailView(View):
 
 class ApplicationView(View):
     @user_login_decorator
-    def post(self, request, recruitment_id):
+    def post(self, request):
+        data = json.loads(request.body)
+
         if UserRecruitment.objects.filter(user = request.user.id).exists():
             return JsonResponse({"message": "AlreadyExists"}, status = 400)
         
         UserRecruitment.objects.create(
             user_id        = request.user.id,
-            recruitment_id = recruitment_id
+            recruitment_id = data["id"]
         )
         return JsonResponse({"message": "SUCCESS"}, status = 200) 
