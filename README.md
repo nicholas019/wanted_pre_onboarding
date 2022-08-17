@@ -31,7 +31,7 @@
   
 5. 과제 4-2. 채용공고 검색기능 구현 ( RecruitmentList > get method )
   - 과제 4-1.의 클레스에 query parameter 로 자료를 받는다면 가져온 List에서 Q객체와 icontains를 활용하여 검색기능 구현
-  - 검색 가능 대상 : skill(사용기술), position(채용포지션), compensation(채용보상), company_name(회사명), company_country(회사국가명), company_city(회사 지역명)
+  - 검색 가능 대상 : skill(사용기술), position(채용포지션), compensation(채용보상), company_name(회사명), company_country(회사국가명), company_city(회사도시명)
  
 6. 과제 5. 채용 상세 페이지를 가져옵니다. ( RecruitmentDetailView > get method )
    - 보고싶은 상세페이지는 path parameter로 전달받으면 DB에서 가져와서 딕셔너리형태로 만들어 반환하는 기능 구현
