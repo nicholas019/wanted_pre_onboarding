@@ -58,7 +58,7 @@ class RecruitmentViewTest(TestCase):
                 "skill"       : "change fake skill "
             }
 
-            response = client.patch('/recruitment', data, **headers, content_type='application/json')
+            response = client.patch('/recruitment/1', data, **headers, content_type='application/json')
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.json(), {"message": "SUCCESS"})
 
@@ -71,7 +71,7 @@ class RecruitmentViewTest(TestCase):
                 "skill"       : "change fake skill "
             }
 
-            response = client.patch('/recruitment', data, **headers, content_type='application/json')
+            response = client.patch('/recruitment/1', data, **headers, content_type='application/json')
             self.assertEqual(response.status_code, 400)
             self.assertEqual(response.json(), {"message": "DoesNotExist"})
 
